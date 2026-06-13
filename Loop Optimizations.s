@@ -1,4 +1,13 @@
-# Original
+
+ # No optimization version (insert NOPs manually)
+lw   $t0, 4($s0)      # Load
+nop
+nop                   # stalls for load-use
+add  $t1, $t0, $s1    # dependent on load
+nop
+sub  $t2, $t1, $s2    # dependent on previous add
+sw   $t2, 8($s0)      # store result
+ # Original
 loop:
     lw   $t0, 0($s0)
     add  $t0, $t0, $s1
