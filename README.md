@@ -10,7 +10,7 @@ loop:
     addi $t1, $t1, -1
     bne  $t1, $zero, loop
 
-# Unrolled x2
+# Unrolled x2 
 loop:
     lw   $t0, 0($s0)
     lw   $t2, 4($s0)
